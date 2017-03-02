@@ -323,7 +323,7 @@ mle_Newton_Raphson <- function(approx.weight, observation, censor,
   rate.points <- l <- c()
   seeds <- seq(-5,5, .5)
   for (ll in 1:length(seeds)) {
-    rate.points[ll] <- optim(par = 1, fn = line_search, method = 'Brent', lower = seeds[ll], upper = seeds[ll]+.5)$par
+    rate.points[ll] <- optim(par = 1, fn = line_search, method = 'Brent', lower = -5+seeds[ll], upper = 5+seeds[ll])$par
     l[ll] <- line_search(rate.points[ll])
   }
   dis <- min(l)
@@ -366,7 +366,7 @@ mle_Newton_Raphson <- function(approx.weight, observation, censor,
           rate.points <- l <- c()
           seeds <- seq(-5,5, .5)
           for (ll in 1:length(seeds)) {
-            rate.points[ll] <- optim(par = 1, fn = line_search, method = 'Brent', lower = seeds[ll], upper = seeds[ll]+.5)$par
+            rate.points[ll] <- optim(par = 1, fn = line_search, method = 'Brent', lower = -5+seeds[ll], upper = 5+seeds[ll])$par
             l[ll] <- line_search(rate.points[ll])
           }
           dis <- min(l)
@@ -399,7 +399,7 @@ mle_Newton_Raphson <- function(approx.weight, observation, censor,
           rate.points <- l <- c()
           seeds <- seq(-5,5, .5)
           for (ll in 1:length(seeds)) {
-            rate.points[ll] <- optim(par = 1, fn = line_search, method = 'Brent', lower = seeds[ll], upper = seeds[ll]+.5)$par
+            rate.points[ll] <- optim(par = 1, fn = line_search, method = 'Brent', lower = -5+seeds[ll], upper = 5+seeds[ll])$par
             l[ll] <- line_search(rate.points[ll])
           }
           dis <- min(l)
@@ -431,7 +431,7 @@ mle_Newton_Raphson <- function(approx.weight, observation, censor,
         rate.points <- l <- c()
         seeds <- seq(-1,1, .1)
         for (ll in 1:length(seeds)) {
-          rate.points[ll] <- optim(par = 1, fn = line_search, method = 'Brent', lower = seeds[ll], upper = seeds[ll]+.5)$par
+          rate.points[ll] <- optim(par = 1, fn = line_search, method = 'Brent', lower = -5+seeds[ll], upper = 5+seeds[ll])$par
           l[ll] <- line_search(rate.points[ll])
         }
         dis <- min(l)
